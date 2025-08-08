@@ -11,12 +11,14 @@
 		<th>Código: </th>
 		<th>Rua:</th>		
 		<th>Cidade: </th>		
+		<th>cep: </th>
 		
 	</tr>
 	<tr th:each="lista: ${lista_endereco}">
 	    <td th:text="${lista.codigo}" />
 	    <td th:text="${lista.rua}" />
 	    <td th:text="${lista.cidade}" />
+		<td th:text="${lista.cep}" />
 	</tr>
 	</table>
     

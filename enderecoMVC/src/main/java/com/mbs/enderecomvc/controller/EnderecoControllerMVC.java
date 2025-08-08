@@ -34,5 +34,32 @@ public class EnderecoControllerMVC {
 		return "resultado";
 	}
 	
+	@GetMapping("/inicio_buscar_por_cep")
+	public String inicioPesquiarPorCep( Model model) {
+		model.addAttribute("endereco", new Endereco());
+		return "buscar_por_cep";
+	}
+	
+	@PostMapping(path="/buscar_por_cep")
+	public String buscarPorCep(@ModelAttribute Endereco endereco,Model model) {
+		String cep = endereco.getCep();	
+		// aqui teria que fazer uma teste para saber
+		// se usuario digitou um cep (deve ser feito no model)
+		Endereco enderecoBuscado = null;
+		for(Endereco end : listaEndereco) {
+			if(end.getCep().equals(cep)) {
+				enderecoBuscado = end;
+				break;
+			}
+		}
+		if(enderecoBuscado != null) {			
+			model.addAttribute("endereco",enderecoBuscado);
+			return "resultado_busca";
+		}else {
+			return "resultado_nao_encontrado";
+		}
+		
+	}
+	//buscar_por_cep
 	// CONTINUAR AS IMPLEMENTACOES
 }

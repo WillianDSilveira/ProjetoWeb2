@@ -13,8 +13,10 @@ public class HelloControllerMVC {
 
 
    @GetMapping("/hello")
-	public String hello(@RequestParam(name="name", required=false, defaultValue="MVC") String name, Model model) {
+	public String hello(@RequestParam(name="name", required=false, defaultValue="MVC") String name,
+			@RequestParam(name="idade", required=false, defaultValue="100") String idade,Model model) {
 		model.addAttribute("name", name);
+		model.addAttribute("idade", idade);
 		return "hello";
 	}
    
