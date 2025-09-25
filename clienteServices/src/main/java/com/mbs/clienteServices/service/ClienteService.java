@@ -18,7 +18,7 @@ import com.mbs.clienteServices.repository.ClienteRepository;
 public class ClienteService {
 	
 	@Autowired
-	private ClienteRepository clienteRespository;
+	private ClienteRepository clienteRepository;
 	
 	public String salvar(Cliente cliente) throws Exception {
 		System.out.println("executando salvar na Service: " + cliente);
@@ -28,34 +28,34 @@ public class ClienteService {
 			throw new Exception( "Nome do cliente deve ter no minimo 3 caracteres");
 		}
 		
-		return clienteRespository.salvar(cliente);
+		return clienteRepository.salvar(cliente);
 		// TODO chamar para respository
 	}
 	
 	
 	public List<Cliente> listar() {
-		return clienteRespository.listar();
+		return clienteRepository.listar();
 	}
 	
 	
 	public boolean deletar(Integer id) {
-		return clienteRespository.deletar(id);
+		return clienteRepository.deletar(id);
 	}
 		
 	
 	
 	public boolean atualizar(Cliente cliente) {
-	    return clienteRespository.atualizar(cliente);    
+	    return clienteRepository.atualizar(cliente);    
 	   
 	}
 	
 	public Boolean existeCliente(Cliente cliente) {
-		return clienteRespository.existeCliente(cliente);
+		return clienteRepository.existeCliente(cliente);
 		
 	}	
 	
 	public Cliente buscarCliente( Integer id) {
-	    return clienteRespository.buscarCliente(id);
+	    return clienteRepository.buscarCliente(id);
 	}
 
 }
