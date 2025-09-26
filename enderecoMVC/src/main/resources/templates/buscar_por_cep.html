@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Buscar endereço por cep</h1>
-    <form action="#" th:action="@{/buscar_por_cep}" th:object="${endereco}" method="post">    	
+    <form action="#" th:action="@{/buscar_por_cep}" th:object="${endereco}" method="post">    	   	
 		<p>CEP: <input type="text" th:field="*{cep}" /></p>
         <p><input type="submit" value="Submit" />        
     </form>

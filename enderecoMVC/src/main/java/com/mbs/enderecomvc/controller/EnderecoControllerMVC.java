@@ -30,9 +30,11 @@ public class EnderecoControllerMVC {
 		endereco.setCodigo(++id);
 		listaEndereco.add(endereco); // adiciona na lista.
 		System.out.println("cadastrado endereco: " + endereco.getRua());
-		model.addAttribute("lista_endereco",listaEndereco); // adiciona na request para a view pegar.
+		model.addAttribute("lista_endereco",listaEndereco);
 		return "resultado";
 	}
+	
+	
 	
 	@GetMapping("/inicio_buscar_por_cep")
 	public String inicioPesquiarPorCep( Model model) {
@@ -60,6 +62,35 @@ public class EnderecoControllerMVC {
 		}
 		
 	}
-	//buscar_por_cep
-	// CONTINUAR AS IMPLEMENTACOES
+	
+			
+	@GetMapping("/inicio_remover_por_cep")
+	public String inicioRemoverPorCep( Model model) {
+		model.addAttribute("endereco", new Endereco());
+		return "remover";
+	}
+	
+	
+	@PostMapping(path="/remover_Por_Cep")
+	public String removerPorCep(@ModelAttribute Endereco endereco,Model model) {
+		String cep = endereco.getCep();	
+		
+		Endereco enderecoBuscado = null;
+		for(Endereco end : listaEndereco) {
+			if(end.getCep().equals(cep)) {
+				enderecoBuscado = end;
+				break;
+			}
+		}
+		if(enderecoBuscado != null) {
+			listaEndereco.remove(enderecoBuscado);
+			model.addAttribute("endereco",enderecoBuscado);
+			return "removido";
+		}else {
+			return "resultado_nao_encontrado";
+		}
+		
+	}
+	
+	
 }
