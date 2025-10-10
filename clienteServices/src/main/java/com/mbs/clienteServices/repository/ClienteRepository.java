@@ -57,7 +57,7 @@ public class ClienteRepository {
 	
 	
 	
-	public Boolean existeCliente(Cliente cliente) {
+	public Boolean existeCliente(Integer id) {
 		for (Cliente c : lista) {
 			if(c.getId().equals(id)) {
 				return true;

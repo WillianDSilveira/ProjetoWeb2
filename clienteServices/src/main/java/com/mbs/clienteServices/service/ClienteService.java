@@ -49,8 +49,8 @@ public class ClienteService {
 	   
 	}
 	
-	public Boolean existeCliente(Cliente cliente) {
-		return clienteRepository.existeCliente(cliente);
+	public Boolean existeCliente(Integer id) {
+		return clienteRepository.existeCliente(id);
 		
 	}	
 	

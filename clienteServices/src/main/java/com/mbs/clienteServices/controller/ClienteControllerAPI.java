@@ -111,9 +111,9 @@ public class ClienteControllerAPI {
 	@ApiResponses(value = 
 			{@ApiResponse(responseCode = "200",description = "TRUE=existir ou FALSE=não existir")})
 	@RequestMapping(value = "/v1/cliente/existeCliente",method = RequestMethod.GET)
-	public ResponseEntity<Boolean> existeCliente(@RequestBody Cliente cliente) {
+	public ResponseEntity<Boolean> existeCliente(@PathVariable Integer id) {
 	
-		boolean resultado = clienteService.atualizar(cliente);
+		boolean resultado = clienteService.existeCliente(id);
 		return ResponseEntity.ok(resultado);
 		
 	}
