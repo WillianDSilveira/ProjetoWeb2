@@ -19,13 +19,17 @@ public class ClienteController {
 	@Autowired
 	private ClienteRoteamento clienteRoteamento;		
 	
-	@RequestMapping(value = "/v1/cliente/existeCliente",method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/api-gw/cliente/existe-cliente/{id}",
+			method = RequestMethod.GET)
 	public ResponseEntity<Boolean> existeCliente(@PathVariable Integer id) {
 		
 		System.out.println("Executando Existe Cliente");
 		System.out.println("Chamando ClienteService: endpoint: existe-cliente");
 		
+		//chamando o cliente service
 		ResponseEntity<Boolean> resultado = clienteRoteamento.existeCliente(id);
+		System.out.println("Chamando ClienteService: " + resultado.getBody());
+		
 		return resultado;
 
 	}

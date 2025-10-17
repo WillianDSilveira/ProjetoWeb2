@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ClienteRoteamento {
 		
 	
-	@RequestMapping(value = "/v1/cliente/existeCliente",method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/cliente/existeCliente",method = 
+			RequestMethod.GET)
 	public ResponseEntity<Boolean> existeCliente(@PathVariable Integer id);
-	
-	
 	
 	
 }
