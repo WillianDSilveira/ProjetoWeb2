@@ -1,7 +1,7 @@
-package com.mbs.clienteServices.entidades;
+package entidades;
 
 public class Cliente {
-
+	
 	private Integer id;
 	private String nome;
 	private String email;
@@ -38,5 +38,5 @@ public class Cliente {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	
+
 }

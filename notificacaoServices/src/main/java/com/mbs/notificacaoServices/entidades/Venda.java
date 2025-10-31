@@ -1,4 +1,4 @@
-package entidades;
+package com.mbs.notificacaoServices.entidades;
 
 import java.util.Date;
 
@@ -46,7 +46,5 @@ public class Venda {
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	
-	
+
 }

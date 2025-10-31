@@ -1,7 +1,7 @@
-package com.mbs.clienteServices.entidades;
+package com.mbs.notificacaoServices.entidades;
 
 public class Cliente {
-
+	
 	private Integer id;
 	private String nome;
 	private String email;
@@ -39,4 +39,5 @@ public class Cliente {
 		this.cep = cep;
 	}
 	
+
 }

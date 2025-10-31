@@ -125,7 +125,7 @@ public class ClienteControllerAPI {
 	@ApiResponses(value = 
 	{@ApiResponse(responseCode = "200",description = "Cliente retornado com sucesso"),
 	@ApiResponse(responseCode = "204",description = "Não encontrado cliente")})
-	@RequestMapping(value = "/v1/cliente/buscarCliente",method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/cliente/buscar-cliente/{id}",method = RequestMethod.GET)
 	public ResponseEntity<Cliente> buscarCliente(@PathVariable Integer id) {
 		
 	    Cliente resultado = clienteService.buscarCliente(id);
